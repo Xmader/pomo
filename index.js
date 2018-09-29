@@ -22,7 +22,7 @@ const init = () => {
 
 // 获取上传的文件
 const getFile = () => {
-    var reader = new FileReader();
+    const reader = new FileReader();
     reader.readAsDataURL(upload_btn.files[0]);
 
     reader.onload = function () {
