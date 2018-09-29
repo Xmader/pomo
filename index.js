@@ -5,6 +5,10 @@ const img = document.getElementById('img1');
 const upload_btn = document.getElementById("upload-button");
 const save_btn = document.getElementById("save-button");
 
+const mo = document.querySelector("#mo")
+const size_range = document.querySelector("#size_range")
+const size_span = document.querySelector("#size")
+
 const init = () => {
     const img_width = img.naturalWidth
     const img_height = img.naturalHeight
@@ -15,16 +19,6 @@ const init = () => {
     ctx.drawImage(img, 0, 0, img_width, img_height)
 }
 
-cv.addEventListener("click", (e) => {
-    const mo = document.querySelector("#mo")
-
-    const width = 160
-    const height = 200
-    ctx.drawImage(mo, e.layerX - 8 - width / 2, e.layerY - 8 - height / 2, width, height)
-})
-
-img.onload = init
-init()
 
 // 获取上传的文件
 const getFile = () => {
@@ -36,7 +30,11 @@ const getFile = () => {
     }
 }
 
-upload_btn.onchange = getFile
+
+const change_size = () => {
+    size_span.textContent = size_range.value
+}
+
 
 // 保存画板
 let saved = false
@@ -52,7 +50,21 @@ save_btn.onclick = (e) => {
         });
         saved = true
     }
-    else{
+    else {
         e.target.value = "保存画板"
     }
 }
+
+cv.addEventListener("click", (e) => {
+    const _width = size_range.value || 160
+    const _height = _width * 1.25
+
+    ctx.drawImage(mo, e.layerX - 8 - _width / 2, e.layerY - 8 - _height / 2, _width, _height)
+})
+
+
+img.onload = init
+upload_btn.onchange = getFile
+
+init()
+change_size()

@@ -20,17 +20,11 @@
     <footer id="footer">
         <div class="range_div">
             <p style="margin-left: 10px;">
-                点击ASCII字符画可播放/暂停视频
+                调整墨迹大小
             </p>
-            <p style="margin-left: 10px;">
-                调整ASCII字符画的字号:
-                <br>
-                (字号越小分辨率越高，占用的CPU百分比也就越高)
-            </p>
-            <p>
-                <input id="font_size_range" type="range" min="2" max="16" value="2" step="2" oninput="change_font_size()"
-                    onchange="change_font_size()" />
-                当前字号: <span id="font_size"></span>px(像素)
+                <input id="size_range" type="range" min="10" max="320" value="160" step="1" oninput="change_size()"
+                    onchange="change_size()" />
+                当前宽度: <span id="size"></span>px(像素)
             </p>
         </div>
 
