@@ -17,7 +17,32 @@
     <img id="img1" src="./f.jpg" style="display:none" />
     <img id="mo" src="./1.png" style="display:none" />
 
-    <script src="index.js"></script>
+    <footer id="footer">
+        <div class="range_div">
+            <p style="margin-left: 10px;">
+                点击ASCII字符画可播放/暂停视频
+            </p>
+            <p style="margin-left: 10px;">
+                调整ASCII字符画的字号:
+                <br>
+                (字号越小分辨率越高，占用的CPU百分比也就越高)
+            </p>
+            <p>
+                <input id="font_size_range" type="range" min="2" max="16" value="2" step="2" oninput="change_font_size()"
+                    onchange="change_font_size()" />
+                当前字号: <span id="font_size"></span>px(像素)
+            </p>
+        </div>
+
+        <div class="upload-div">
+            <p>
+                想要换一张图片？
+            </p>
+            <input name="file" id="upload-button" accept="image/*" title="" type="file">
+            <input id="text-button" value="点我选择图片" type="button">
+        </div>
+
+        <script src="index.js"></script>
 </body>
 
 </html>
