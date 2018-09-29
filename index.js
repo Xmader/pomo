@@ -18,7 +18,7 @@ init()
 cv.addEventListener("click", (e) => {
     const mo = document.querySelector("#mo")
 
-    const width = 40
-    const height = 50
+    const width = 160
+    const height = 200
     ctx.drawImage(mo, e.layerX - 8 - width / 2, e.layerY - 8 - height / 2, width, height)
 })
