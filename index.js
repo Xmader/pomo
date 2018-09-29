@@ -9,6 +9,9 @@ const mo = document.querySelector("#mo")
 const size_range = document.querySelector("#size_range")
 const size_span = document.querySelector("#size")
 
+const click_to_hide_img = document.querySelector(".click_to_hide")
+
+
 const init = () => {
     const img_width = img.naturalWidth
     const img_height = img.naturalHeight
@@ -62,6 +65,9 @@ cv.addEventListener("click", (e) => {
     ctx.drawImage(mo, e.layerX - 8 - _width / 2, e.layerY - 8 - _height / 2, _width, _height)
 })
 
+click_to_hide_img.onclick = (e)=>{
+    e.target.style.display = "none"
+}
 
 img.onload = init
 upload_btn.onchange = getFile

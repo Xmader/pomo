@@ -10,12 +10,12 @@
 
 .range_div {
     float: left;
+    margin-right: 5rem;
 }
 
 .upload-div {
     margin-right: 10px;
     margin-bottom: 10px;
-    float: right;
 }
 
 #upload-button,
@@ -32,4 +32,9 @@
     position: absolute;
     cursor: pointer;
     opacity: 0;
+}
+
+.click_to_hide {
+    position: relative;
+    left: -410px;
 }
