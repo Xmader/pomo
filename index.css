@@ -1,3 +1,7 @@
+body {
+    margin: 8px;
+}
+
 .hidden {
     position: absolute;
     visibility: hidden;
@@ -16,6 +20,7 @@
 .upload-div {
     margin-right: 10px;
     margin-bottom: 10px;
+    float: left;
 }
 
 #upload-button,
@@ -35,6 +40,7 @@
 }
 
 .click_to_hide {
-    position: relative;
-    left: -410px;
+    position: absolute;
+    left: 8px;
+    top: 8px;
 }
